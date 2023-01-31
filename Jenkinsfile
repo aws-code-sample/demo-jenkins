@@ -1,8 +1,8 @@
-pipleline {
+pipeline {
   agent any
   stages {
-    stage('build'){
-      steps{
+    stage('build') {
+      steps {
         echo 'Hello 世界'
       }
     }
