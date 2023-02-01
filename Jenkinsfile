@@ -17,6 +17,8 @@ podTemplate(yaml: '''
     apiVersion: v1
     kind: Pod
     spec:
+      nodeSelector:
+        karpenter-arch: arm64
       containers:
       - name: maven
         image: maven:3.8.1-jdk-8
@@ -42,7 +44,7 @@ podTemplate(yaml: '''
       }
 
       stage('Get a Golang project') {
-        // git url: 'https://github.com/hashicorp/terraform-provider-google.git', branch: 'main'
+        git url: 'https://github.com/aws-code-sample/demo-jenkins.git', branch: 'main'
         container('golang') {
           stage('Build a Go project') {
             sh '''
