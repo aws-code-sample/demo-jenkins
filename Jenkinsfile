@@ -46,10 +46,8 @@ podTemplate(yaml: '''
         container('golang') {
           stage('Build a Go project') {
             sh '''
-            // mkdir -p /go/src/github.com/hashicorp
-            // ln -s `pwd` /go/src/github.com/hashicorp/terraform
-            // cd /go/src/github.com/hashicorp/terraform && make
             go version
+            ls
           '''
           }
         }
