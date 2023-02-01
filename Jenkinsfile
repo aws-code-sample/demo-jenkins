@@ -21,13 +21,13 @@ podTemplate(yaml: '''
         karpenter-arch: arm64
       containers:
       - name: maven
-        image: maven:3.8.1-jdk-8
+        image: maven
         command:
         - sleep
         args:
         - 99d
       - name: golang
-        image: golang:1.16.5
+        image: golang
         command:
         - sleep
         args:
